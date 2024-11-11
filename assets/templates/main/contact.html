@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Azenta Template">
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>HomeLife</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}" type="text/css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        function validation(){
+            var user_name = document.myform.user_name
+            var email = document.myform.email
+            var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+            var message = document.myform.message
+            var subject = document.myform.subject
+
+            if (user_name.value==''){
+                alert(" Username cant' be block" )
+                user_name.focus();
+                return false;
+            }
+            if (!email.value.match(mailformat)){
+                alert("invalid email")
+                email.focus();
+                return false;
+               } 
+            
+            if (message.value==''){
+                alert(" message cant' be block" )
+                return false;
+            }
+            if (subject.value==''){
+                alert("  subject cant' be block" )
+                return false;
+            }
+            else{
+               return true;
+            }
+        }
+    </script>
+</head>
+
+<b>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+  
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="main-menu">
+                           <ul>
+                            <li><a href="#" class="partner-logo">
+                                    <div class="partner-logo-tablecell">
+                                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                                    </div>
+                                </a></li>
+                            <li ><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'properties_menu' %}">Properties</a></li>
+                            <li><a href="{% url 'admin_login' %}">Admin</a></li>
+                            <li><a href="{% url 'user_login' %}">User</a></li>
+                            <li class="active"><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="top-right mt-2">
+                       <a href="{% url 'user_login' %}" class="property-sub">SALE PROPERTY</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            
+                   
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section contact-page " style="background-color:black" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Contact Us</h2>
+                        <div class="breadcrumb-option">
+                            <a href="#"><i class="fa fa-home"></i> Home</a>
+                            <span>Contact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section Begin -->
+
+                
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+    <br><br>
+    <!-- Contact Section Begin -->
+    <section class="contact-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.2333940715107!2d78.54715541470263!3d17.352498788099474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9978d5a0a633%3A0x7f965425ffaf7960!2sCodebook!5e0!3m2!1sen!2sin!4v1651751956999!5m2!1sen!2sin" width="600" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                       
+                        <div class="map-inside">
+                            <i class="icon_pin"></i>
+                            <div class="inside-widget">
+                                <h4>Codebook</h4>
+                                <ul>
+                                    <li>Phone: +91 8555 8879 86</li>
+                                    <li>Add: Snehapuri Colony, Bahadurguda, L.B Nagar, Hyderabad</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-7 offset-lg-1">
+                            <div class="contact-text">
+                                <div class="section-title">
+                                    <span>Contact</span>
+                                    <h2>Get In Touch</h2>
+                                </div>
+                                <form  class="contact-form" method="post" enctype="multipart/form-data" name="myform" onsubmit="return validation();">
+                                    {% csrf_token %}
+
+                                    {% if messages %}              
+                                {% for message in messages %}
+                                  {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                                      <script>swal({
+                                        title: "Thank You",
+                                        text: "{{message}}",
+                                        icon: "warning",
+                                        button: "OK",
+                                      });
+                                    </script>
+                                    
+                                  {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                                      <script>swal({
+                                        title: "we will contact with you soon :)",
+                                        text: "{{message}}",
+                                        icon: "success",
+                                        button: "OK",
+                                      });
+                                    </script>
+                                  {% endif %}              
+                                {% endfor %} 
+                              {% endif %}
+
+                                    <input type="text" placeholder="Name" name='user_name'>
+                                    <input type="text" placeholder="Email" name='email'>
+                                    <input type="text" placeholder="Subject" name='subject'>
+                                    <textarea placeholder="Message" name='message'></textarea>
+                                    <button type="submit" class="site-btn">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Partner Carousel Section Begin -->
+    <div class="partner-section contact-partner">
+        <div class="container">
+            <div class="partner-carousel owl-carousel">
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-1.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-3.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-4.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-5.png' %}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Carousel Section End -->
+
+     <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="{% static 'user/img/footer-bg.jpg' %}">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <a href="#"><img src=""><h3 style="color:skyblue">HomeLife</h3></a>
+                            </div>
+                            <p>Count on us and find your dream properties today</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="footer-widget">
+                            <h4>Property City</h4>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Hyderabad</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Chennai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Vizag</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Bangalore</a></li>
+                            </ul>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Tirpati</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Kerala</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Maharastra</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Nellore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Social</h4>
+                            <ul class="social">
+                                <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-option">
+                                <li><i class="fa fa-map-marker"></i>Hyderabad,Pin Code:500074. T.S.</li>
+
+                                <li><i class="fa fa-phone"></i> 8555887986</li>
+                                <li><i class="fa fa-envelope"></i> info@codebook.in</li>
+                                <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p>
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Designed & Developed by FZ INFOTECH
+                    <i class="ti-heart" aria-hidden="true"></i> <a href="https://colorlib.com"
+                        target="_blank"></a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'user/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,1367 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Azenta Template">
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>HomeLife</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}" type="text/css">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+</head>
+
+<b>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+  
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="main-menu">
+                           
+                            <ul>
+
+                                <li><a href="#" class="partner-logo">
+                                    <div class="partner-logo-tablecell">
+                                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                                    </div>
+                                </a></li>
+                                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'properties_menu' %}">Properties</a></li>
+                                <li><a href="{% url 'admin_login' %}">Admin</a></li>
+                                <li><a href="{% url 'user_login' %}">User</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="top-right mt-2">
+                            <a href="{% url 'user_login' %}" class="property-sub">SALE PROPERTY</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-item set-bg" data-setbg="{% static 'user/img/hero/hero-1.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="hero-text">
+                               <div>
+                                <h3 style="color:skyblue">Simplifying your home finding hassles with hundreds of luxurious</h3></div>
+                                <div class="room-price">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-item set-bg" data-setbg="{% static 'user/img/hero/hero-2.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="hero-text">
+                                <div>
+                                    <h3 style="color:skyblue">Luxury is made...live life in comfort... Your dream is here, Your home is here</h3></div>
+                                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-pic">
+            <div class="thumbs owl-carousel">
+                <div class="item">
+                    <img src="{% static 'user/img/hero/dot-1.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'user/img/hero/dot-2.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'user/img/hero/dot-3.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    {% if messages %}              
+    {% for message in messages %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+          <script>swal({
+            title: "",
+            text: "{{message}}",
+            icon: "warning",
+            button: "OK",
+          });
+        </script>
+        
+      {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+          <script>swal({
+            title: "Success :)",
+            text: "{{message}}",
+            icon: "success",
+            button: "OK",
+          });
+        </script>
+      {% endif %}              
+    {% endfor %} 
+  {% endif %}
+
+
+
+  <div class="pd-details-tab">
+    <div class="tab-item">
+        <ul class="nav justify-content-center mt-3" role="tablist" >
+            <li>
+                            <a data-toggle="tab" href="#tab-1" role="tab"><button class="btn btn-info me-md-2 mx-1" type="button"><i class="fa fa-search"></i>
+                                Find Your Home</button></a>
+            </li>
+            
+            <li>
+                <a data-toggle="tab" href="#tab-2" role="tab"><button class="btn btn-info me-md-2 mx-1" type="button"><i class="fa fa-search"></i>
+                    Find Your Land</button></a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#tab-3" role="tab"><button class="btn btn-info me-md-2 mx-1" type="button"><i class="fa fa-search"></i>
+                    Find Your Shops</button></a>
+            </li>
+        </ul>
+    </div>
+    <br><br>
+    <div class="tab-item-content">
+        <div class="tab-content">
+            
+            <div class="tab-pane fade-in active" id="tab-1" role="tabpanel" >
+                <div class="property-more-table">
+                    <div class="search-form">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                    <form action="#" class="filter-form" method ="post" >
+                        {% csrf_token %}
+                       
+                        <div class="second-row">
+                            <select name="city1" >
+                                <option>Location</option>
+                                <option>Hyderabad</option>
+                                <option>Nellore</option>
+                                <option>Bangalore</option>
+                                <option >Chennai</option>
+                                <option >Vizag</option>
+                                <option >Tirupati</option>
+                                <option >Rajastan</option>
+                                <option >Maharastra</option>
+                               
+                            </select>
+                        
+                      
+                        <select name="property_type1">
+                            <option >Property Type</option>
+                            <option value="Houses">Houses</option>
+                            <option value="Apartments">Apartments</option>
+                            <option value="Shops">Shops</option>
+                            <option value="Offices">Offices</option>
+                            <option value="Lands">Lands</option>
+                            <option value="Plots">Plots</option>
+                            <option value="Buildings">Buildings</option>
+                            <option value="Pg">Pg</option>
+                           
+                        </select>
+                        <select name="contract_type">
+                            <option value="">Contract Type</option>
+                            <option>Buy</option>
+                            <option>Rent</option>
+
+                        </select>
+                            <button type="submit" name='search' class="search-btn">Search</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-2" role="tabpanel">
+                <div class="property-more-table">
+                    <div class="search-form">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                    <form action="#" class="filter-form" method ="post" >
+                        {% csrf_token %}   
+                        <div class="second-row">
+                            <select name="city2" >
+                                <option>Location</option>
+                                <option>Hyderabad</option>
+                                <option>Nellore</option>
+                                <option>Bangalore</option>
+                                <option >Chennai</option>
+                                <option >Vizag</option>
+                                <option >Tirupati</option>
+                                <option >Rajastan</option>
+                                <option >Maharastra</option>
+                               
+                            </select>
+                        
+                      
+                        <select name="property_type">
+                            <option value="">Property Type</option>
+                            <option>Lands</option>
+                            <option>Plots</option>
+                           
+                    
+                        </select>
+                        <select name="contact_type">
+                            <option value="">Contract Type</option>
+                            <option>Buy</option>
+                            <option>Rent</option>
+
+                        </select>
+                        
+                            <button type="search" name='search2' class="search-btn">Search</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-3" role="tabpanel">
+                <div class="property-more-table">
+                    <div class="search-form">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                    <form action="#" class="filter-form" method ="post">
+                        {% csrf_token %}
+                    
+                            <div class="second-row">
+                                <select name="city3" >
+                                    <option>Location</option>
+                                    <option>Hyderabad</option>
+                                    <option>Nellore</option>
+                                    <option>Bangalore</option>
+                                    <option >Chennai</option>
+                                    <option >Vizag</option>
+                                    <option >Tirupati</option>
+                                    <option >Rajastan</option>
+                                    <option >Maharastra</option>
+                                   
+                                </select>
+                            
+                          
+                            <select name="property_type">
+                                <option value="">Property Type</option>
+                                <option>Shop</option>
+                                <option>Office</option>
+                        
+                            </select>
+                            <select name="contact_type">
+                                <option value="">Contract Type</option>
+                                <option>Buy</option>
+                                <option>Rent</option>
+    
+                            </select>
+                               
+                            <button type="search" name='search' class="search-btn">Search</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+</div>
+</div>
+
+
+
+
+   
+    <!-- Feature Section Begin -->
+    <section class="feature-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                 <div class="section-title">
+                  
+         <h2>Featured Properties</h2>
+ 
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="feature-carousel owl-carousel">
+
+{% for h in house %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.house_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Rent</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.house_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.ownerdata.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.property_type}}</h4>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span>/month</span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %}" class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.super_buldup_area}} sqft</p>
+                </li>
+                <li>
+                    <i class="fa fa-bed"></i>
+                    <p>{{h.bedrooms}}</p>
+                </li>
+                <li>
+                    <i class="fa fa-bath"></i>
+                    <p>{{h.bathrooms}}</p>
+                </li>
+                <li>
+                    <i class="fa fa-car"></i>
+                    <p>{{h.car_parking}}</p>
+                </li>
+              
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+
+ 
+
+ {% for h in salehouse %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.house_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Sale</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.house_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.user.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.property_type}}</h4>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span>/month</span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %} "class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.super_buldup_area}} sqft</p>
+                </li>
+                <li>
+                    <i class="fa fa-bed"></i>
+                    <p>{{h.bedrooms}}</p>
+                </li>
+                <li>
+                    <i class="fa fa-bath"></i>
+                    <p>{{h.bathrooms}}</p>
+                </li>
+
+                <li>
+                    <i class="fa fa-car"></i>
+                    <p>{{h.car_parking}}</p>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %} 
+
+                  
+{% for h in land %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.land_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Rent</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.land_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.user.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.property_type}}</h4>
+                <ul>
+                        <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+    
+                    </ul>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span>/month</span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %}"class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+            
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.breadth}} sqft</p>
+                </li>
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.length}} length</p>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+
+                                     
+{% for h in saleland %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.land_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Rent</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.land_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.user.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.property_type}}</h4>
+                <ul>
+                        <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+    
+                    </ul>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span>/month</span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %}"class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+            
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.breadth}} sqft</p>
+                </li>
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.length}} length</p>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+
+{% for h in shop %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.shop_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Sale</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.shop_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.user.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.property_type}}</h4>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span>/month</span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %} "class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.super_buldup_area}} sqft</p>
+                </li>
+               
+                <li>
+                    <i class="fa fa-bath"></i>
+                    <p>{{h.bathrooms}}</p>
+                </li>
+                <li>
+                    <i class="fa fa-car"></i>
+                    <p>{{h.car_parking}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+
+{% for h in saleshop %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.shop_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Sale</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.shop_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.user.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.property_type}}</h4>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %} "class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.super_buldup_area}} sqft</p>
+                </li>
+               
+                <li>
+                    <i class="fa fa-bath"></i>
+                    <p>{{h.bathrooms}}</p>
+                </li>
+                <li>
+                    <i class="fa fa-car"></i>
+                    <p>{{h.car_parking}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+
+
+{% for h in pg %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.pg_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Rent</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.pg_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.user.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.sub_type}}</h4>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span>/month</span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %}"class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.super_buldup_area}} sqft</p>
+                </li>
+               
+                <li>
+                    <i class="fa fa-car"></i>
+                    <p>{{h.car_parking}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+
+
+{% for h in salepg %}
+<div class="col-lg-4">
+                   
+    <div class="feature-item">
+        <div class="fi-pic set-bg" data-setbg="/media/{{h.pg_image}}">
+            <div class="pic-tag">
+                <div class="f-text">feauture</div>
+                <div class="s-text">For Rent</div>
+            </div>
+            <div class="feature-author">
+                <div class="fa-pic">
+                    <img src="/media/{{h.pg_image}}" alt="">
+                </div>
+                <div class="fa-text text-white">
+                    <span>{{ h.user.user_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="fi-text">
+            <div class="inside-text">
+               
+               <h4>{{h.sub_type}}</h4>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i>{{h.property_location}} </li>
+                    
+                </ul>
+                <h5 class="price">₹{{h.price}}<span>/month</span></h5>
+               
+                <button type="button" class="btn " style="background-color:skyblue"> <a href="{% url 'user_login' %} "class="text-white">property-details</a></button>
+            </div>
+            <ul class="room-features">
+                <li>
+                    <i class="fa fa-arrows"></i>
+                    <p>{{h.super_buldup_area}} sqft</p>
+                </li>
+                <li>
+                    <i class="fa fa-car"></i>
+                    <p>{{h.car_parking}}</p>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+    
+</div>
+{% endfor %} 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Section End -->
+
+    <!-- Video Section Begin -->
+    <div class="video-section set-bg" data-setbg="{% static 'user/img/video-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="video-text">
+                        <a href="https://www.youtube.com/watch?v=EzKkl64rRbM" class="play-btn video-popup"><i
+                                class="fa fa-play"></i></a>
+                        <h4>Find The Perfect</h4>
+                        <h2>Real Estate Near You</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Section End -->
+
+    <!-- Top Properties Section Begin -->
+    <div class="top-properties-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="properties-title">
+                        <div class="section-title">
+                            <span>Top Property For You</span>
+                            <h2>Top Properties</h2>
+                        </div>
+                        <a href="{% url 'user_login' %}" class="top-property-all">View All Property</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="top-properties-carousel owl-carousel">
+
+                {% for h in house %}
+                <div class="single-top-properties">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="stp-pic">
+                                <img src="/media/{{h.house_image}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="stp-text">
+                                <div class="s-text">For Rent</div>
+                                <h2>{{h.property_type}}</h2>
+                                <div class="room-price">
+                                    <span>Start From:</span>
+                                    <h4>${{h.price}}</h4>
+                                </div>
+                                <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                <p>{{h.description}}</p>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{h.super_buldup_area}} sqft</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bed"></i>
+                                        <p>{{h.bedrooms}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bath"></i>
+                                        <p>{{h.bathrooms}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-car"></i>
+                                        <p>{{h.car_parking}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+
+              {% for h in salehouse %}
+                <div class="single-top-properties">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="stp-pic">
+                                <img src="/media/{{h.house_image}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="stp-text">
+                                <div class="s-text">For Sale</div>
+                                <h2>{{h.property_type}}</h2>
+                                <div class="room-price">
+                                    <span>Start From:</span>
+                                    <h4>${{h.price}}</h4>
+                                </div>
+                                <div class="properties-location"><i class="icon_pin"></i> 
+                                    {{h.property_location}}</div>
+                                <p>{{h.description}}</p>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{h.super_buldup_area}} sqft</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bed"></i>
+                                        <p>{{h.bedrooms}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bath"></i>
+                                        <p>{{h.bathrooms}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-car"></i>
+                                        <p>{{h.car_parking}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% for h in land %}
+                <div class="single-top-properties">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="stp-pic">
+                                <img src="/media/{{h.land_image}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="stp-text">
+                                <div class="s-text">For Rent</div>
+                                <h2>{{h.property_type}}</h2>
+                                <div class="room-price">
+                                    <span>Start From:</span>
+                                    <h4>${{h.price}}</h4>
+                                </div>
+                                <div class="properties-location"><i class="icon_pin"></i> 
+                                    {{h.property_location}}</div>
+                                <p>{{h.description}}</p>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{h.breadth}} sqft</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{h.length}} length</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+
+              {% for h in saleland %}
+              <div class="single-top-properties">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="stp-pic">
+                            <img src="/media/{{h.land_image}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="stp-text">
+                            <div class="s-text">For Sale</div>
+                            <h2>{{h.property_type}}</h2>
+                            <div class="room-price">
+                                <span>Start From:</span>
+                                <h4>${{h.price}}</h4>
+                            </div>
+                            <div class="properties-location"><i class="icon_pin"></i> 
+                                {{h.property_location}}</div>
+                            <p>{{h.description}}</p>
+                            <ul class="room-features">
+                                <li>
+                                    <i class="fa fa-arrows"></i>
+                                    <p>{{h.breadth}} sqft</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-arrows"></i>
+                                    <p>{{h.length}} length</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% for h in shop %}
+                <div class="single-top-properties">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="stp-pic">
+                                <img src="/media/{{h.shop_image}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="stp-text">
+                                <div class="s-text">For Rent</div>
+                                <h2>{{h.property_type}}</h2>
+                                <div class="room-price">
+                                    <span>Start From:</span>
+                                    <h4>${{h.price}}</h4>
+                                </div>
+                                <div class="properties-location"><i class="icon_pin"></i> 
+                                    {{h.property_location}}</div>
+                                <p>{{h.description}}</p>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{h.super_buldup_area}} sqft</p>
+                                    </li>
+                                  
+                                    <li>
+                                        <i class="fa fa-bath"></i>
+                                        <p>{{h.bathrooms}}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-car"></i>
+                                        <p>{{h.car_parking}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+
+              {% for h in saleshop %}
+              <div class="single-top-properties">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="stp-pic">
+                            <img src="/media/{{h.shop_image}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="stp-text">
+                            <div class="s-text">For Sale</div>
+                            <h2>{{h.property_type}}</h2>
+                            <div class="room-price">
+                                <span>Start From:</span>
+                                <h4>${{h.price}}</h4>
+                            </div>
+                            <div class="properties-location"><i class="icon_pin"></i> 
+                                {{h.property_location}}</div>
+                            <p>{{h.description}}</p>
+                            <ul class="room-features">
+                                <li>
+                                    <i class="fa fa-arrows"></i>
+                                    <p>{{h.super_buldup_area}} sqft</p>
+                                </li>
+                               
+                                <li>
+                                    <i class="fa fa-bath"></i>
+                                    <p>{{h.bathrooms}}</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-car"></i>
+                                    <p>{{h.car_parking}}</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% for h in pg %}
+                <div class="single-top-properties">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="stp-pic">
+                                <img src="/media/{{h.pg_image}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="stp-text">
+                                <div class="s-text">For Rent</div>
+                                <h2>{{h.sub_type}}</h2>
+                                <div class="room-price">
+                                    <span>Start From:</span>
+                                    <h4>${{h.price}}</h4>
+                                </div>
+                                <div class="properties-location"><i class="icon_pin"></i> 
+                                    {{h.property_location}}</div>
+                                <p>{{h.description}}</p>
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p>{{h.super_buldup_area}} sqft</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-car"></i>
+                                        <p>{{h.car_parking}}</p>
+                                    </li>
+                                   
+                                </ul>                           </div>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+
+              {% for h in salepg %}
+              <div class="single-top-properties">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="stp-pic">
+                            <img src="/media/{{h.pg_image}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="stp-text">
+                            <div class="s-text">For Sale</div>
+                            <h2>{{h.sub_type}}</h2>
+                            <div class="room-price">
+                                <span>Start From:</span>
+                                <h4>${{h.price}}</h4>
+                            </div>
+                            <div class="properties-location"><i class="icon_pin"></i> 
+                                {{h.property_location}}</div>
+                            <p>{{h.description}}</p>
+                            <ul class="room-features">
+                                <li>
+                                    <i class="fa fa-arrows"></i>
+                                    <p>{{h.super_buldup_area}} sqft</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-car"></i>
+                                    <p>{{h.car_parking}}</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Top Properties Section End -->
+ <!-- Types Section Begin -->
+ <section class="agent-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>We Are To Help You</span>
+                    <h2>Property Types</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="agent-carousel owl-carousel">
+                <div class="col-lg-3">
+                    <div class="single-agent">
+                        <div class="sa-pic">
+                            <img src="{% static 'user/rooms/house1.jpg' %}" alt="">
+                            <div class="hover-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <h5>Houses</h5>
+                    </div>
+                </div>
+               
+                <div class="col-lg-3">
+                    <div class="single-agent">
+                        <div class="sa-pic">
+                            <img src="{% static 'user/rooms/house5.jpg' %}" alt="">
+                            <div class="hover-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <h5>Apartments</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="single-agent">
+                        <div class="sa-pic">
+                            <img src="{% static '/user/rooms/house6.jpg' %}" alt="">
+                            <div class="hover-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <h5>Villa</h5>
+                    </div>
+                </div>
+               
+                <div class="col-lg-3">
+                    <div class="single-agent">
+                        <div class="sa-pic">
+                            <img src="{% static 'user/rooms/house9.jpg' %}" alt="">
+                            <div class="hover-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <h5> Shops</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="single-agent">
+                        <div class="sa-pic">
+                            <img src="{% static 'user/rooms/house10.jpg' %}" alt="">
+                            <div class="hover-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <h5>PG & Hostels</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="single-agent">
+                        <div class="sa-pic">
+                            <img src="{% static 'user/rooms/house2.jpg' %}" alt="">
+                            <div class="hover-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <h5> Offices</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="single-agent">
+                        <div class="sa-pic">
+                            <img src="{% static 'user/rooms/land1.jpg' %}" alt="">
+                            <div class="hover-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <h5> Lands & Plots</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Types Section End -->
+
+    <!-- Latest Blog Section Begin -->
+    <section class="blog-details-section">
+        <div class="container">
+            <div class="row">
+               
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="comment-option">
+                        <h4>Comments</h4>
+                      
+                       
+                        {% for f in feedback %}
+                        <div class="single-comment-item second-comment">
+                            <div class="sc-author">
+                                <img src="/media/{{f.user_image}}" alt="">
+                            </div>
+                            <div class="sc-text">
+                                
+                                <h5>{{f.user_name}}</h5>
+                                <span >{{f.feedback_date}}</span>
+                                <p>{{f.feedback}}</p>
+                                <!-- <a href="#" class="comment-btn">Like</a>
+                                <a href="#" class="comment-btn">Reply</a> -->
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+               
+            </div>
+
+            </div>
+            </section>
+    <!-- Latest Blog Section End -->
+
+    <!-- Partner Carousel Section Begin -->
+    <div class="partner-section">
+        <div class="container">
+            <div class="partner-carousel owl-carousel">
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-1.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-3.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-4.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-5.png' %}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Carousel Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="{% static 'user/img/footer-bg.jpg' %}">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <a href="#"><img src=""><h3 style="color:skyblue">HomeLife</h3></a>
+                            </div>
+                            <p>Count on us and find your dream properties today</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="footer-widget">
+                            <h4>Property City</h4>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Hyderabad</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Chennai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Vizag</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Bangalore</a></li>
+                            </ul>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Tirpati</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Kerala</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Maharastra</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Nellore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Social</h4>
+                            <ul class="social">
+                                <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-option">
+                                <li><i class="fa fa-map-marker"></i>Hyderabad,Pin Code:500074. T.S.</li>
+
+                                <li><i class="fa fa-phone"></i> 8555887986</li>
+                                <li><i class="fa fa-envelope"></i> info@codebook.in</li>
+                                <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p>
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Designed & Developed by FZ INFOTECH
+                    <i class="ti-heart" aria-hidden="true"></i> <a href="https://colorlib.com"
+                        target="_blank"></a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'user/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+</body>
+
+</html>

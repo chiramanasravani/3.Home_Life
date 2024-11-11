@@ -1,0 +1,1138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Azenta Template">
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>HomeLife</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}" type="text/css">
+</head>
+
+
+<b>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="main-menu">
+
+                            <ul>
+
+                                <li> <a href="#" class="partner-logo">
+                                    <div class="partner-logo-tablecell">
+                                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                                    </div>
+                                </a>
+                                <li><a href="{% url 'user_dashboard' %}">Dashboard</a></li>
+                                <li><a href="{% url 'property_types' %}">Properties</a></li>
+                                <li><a href="{% url 'add_properties_rent' %}">Add Properties</a></li>
+                                <li><a href="{% url 'profile' %}">Profile</a></li>
+                                <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="col-lg-3">
+                        <div class="top-right mt-2">
+                            <div class="language-option">
+                               
+                                <span>MY ACCOUNTS</span>
+                                <i class="fa fa-angle-down"></i>
+                                <div class="flag-dropdown">
+                                    <ul>
+                                        
+                                        <li><a href="{% url 'my_properties' %}">My Properties</a></li>
+                                        <li><a href="{% url 'my_properties_status' %}">My Properties Status</a></li>
+                                        <li><a href="{% url 'appointment' %}">Appointments</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="{% url 'home' %}" class="property-sub">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Breadcrumb Section Begin -->
+        <section class="breadcrumb-section contact-page " style="background-color:black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-text">
+                            <h2>Edit Properties</h2>
+                            <div class="breadcrumb-option">
+                                <a href="#"><i class="fa fa-home"></i> Home</a>
+                                <span>Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Breadcrumb Section Begin -->
+
+
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <center>
+        <!-- Property Details Section Begin -->
+        <section class="property-details-section spad">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="pd-details-text">
+                            <div class="pd-details-social">
+                               
+                                <a  class="active" style="background-color:skyblue;color:white;"
+                                href="#"><i>Rent</i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-print"></i></a>
+                                <a href="#"><i class="fa fa-cloud-download"></i></a>
+                            </div>
+
+                            <div class="pd-details-tab">
+                                <div class="tab-item">
+                                    <ul class="nav" role="tablist">
+                                        <li>
+                                            <a class="active" data-toggle="tab" href="#tab-1" role="tab">Houses &
+                                                Apartments</a>
+                                        </li>
+                                        <!-- <li>
+                                            <a data-toggle="tab" href="#tab-2" role="tab">Lands & Plots</a>
+                                        </li>
+                                        <li>
+                                            <a data-toggle="tab" href="#tab-3" role="tab">Shops & Offices</a>
+                                        </li>
+                                        <li>
+                                            <a data-toggle="tab" href="#tab-4" role="tab">PG & Guest Houses</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+
+
+                                <div class="tab-item-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                            <div class="pd-table-desc">
+                                                <section class="blog-details-section">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-10 offset-lg-1">
+                                                                <div class="leave-comment">
+
+
+
+                                                                    <h4 style="color:skyblue">Houses</h4>
+
+                                                                    <form method='post' enctype="multipart/form-data">
+                                                                        {% csrf_token %}
+                                                                        <div class="row">
+
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hproperty_type' >
+                                                                                        <option selected disabled >{{house.property_type}}</option>
+                                                                                        <option>Apartments</option>
+                                                                                        <option>Builder Floors</option>
+                                                                                        <option>Houses & Villas</option>
+
+
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text"
+                                                                                    placeholder="Property Location"
+                                                                                    name='hproperty_location' value={{house.property_location}}>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="Price"
+                                                                                    name='hprice' value={{house.price}}>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <input type="date"
+                                                                                    placeholder="Year Built"
+                                                                                    name='hyear_built' value={{house.year_built}}>
+                                                                            </div>
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hrooms'>
+                                                                                        <option selected disabled>{{house.rooms}}
+                                                                                        </option>
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>4+</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hbedrooms'>
+                                                                                        <option selected disabled>
+                                                                                            {{house.bedrooms}}</option>
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>4+</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hbathrooms'>
+                                                                                        <option selected disabled>
+                                                                                            {{house.bathrooms}}</option>
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>4+</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hcar_parking' >
+                                                                                        <option selected disabled>{{house.car_parking}}</option>
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>4+</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Super Builtup Area"
+                                                                                    name='hsuper_buldup_area'value={{house.super_buldup_area}}>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Carpet Area"
+                                                                                    name='hcarpet_area' value={{house.carpet_area}}>
+                                                                            </div>
+
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hfurnishing'>
+                                                                                        <option selected disabled>
+                                                                                            {{house.furnishing}}</option>
+                                                                                        <option>Furnished</option>
+                                                                                        <option>Semi-Furnished</option>
+                                                                                        <option>Unfurnished</option>
+
+
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Maintenance(Monthly)"
+                                                                                    name='hmaintenance' value={{house.maintenance}}>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Total Floors"
+                                                                                    name='htotal_floors' value={{house.total_floors}}>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="Floor No"
+                                                                                    name='hfloor_no' value={{house.floor_no}}>
+                                                                            </div>
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hfacing'>
+                                                                                        <option selected disabled hidden>{{house.facing}}
+                                                                                        </option>
+                                                                                        <option>East</option>
+                                                                                        <option>North</option>
+                                                                                        <option>North-East</option>
+                                                                                        <option>North-West</option>
+                                                                                        <option>South</option>
+                                                                                        <option>South-East</option>
+                                                                                        <option>East-West</option>
+                                                                                        <option>West</option>
+
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text"
+                                                                                    placeholder="Reference"
+                                                                                    name='hreference' value={{house.reference}}>
+                                                                            </div>
+
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white "></label>
+                                                                               <a style="color:skyblue; font-size:12;" href="/media/{{house.house_image}}" download>download</a> <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='house_image' >
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white "></label>
+
+                                                                                    <a style="color:skyblue; font-size:12;" href="/media/{{house.bedroom_image}}" download>download</a> 
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='bedroom_image'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white "></label>
+
+                                                                                    <a style="color:skyblue; font-size:12;" href="/media/{{house.bathroom_image}}" download>download</a> 
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='bathroom_image'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white "></label>
+
+                                                                                    <a style="color:skyblue; font-size:12;" href="/media/{{house.kitchen_image}}" download>download</a> 
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='kitchen_image'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white "></label>
+
+                                                                                    <a style="color:skyblue; font-size:12;" href="/media/{{house.parking_image}}" download>download</a> 
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='parking_image'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white "></label>
+
+                                                                                    <a style="color:skyblue; font-size:12;" href="/media/{{house.dining_image}}" download>download</a> 
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='dining_image'>
+                                                                            </div>
+
+                                                                            <div>
+
+                                                                            </div>
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        placeholder="Description"
+                                                                                        id="description"
+                                                                                        name='hdescription'
+                                                                                        style="height: 100px;font-weight:lighter;"></textarea>
+                                                                                    <label for="description">
+                                                                                        {{house.description}}</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        placeholder="Amenities"
+                                                                                        name='hamenities'id="amenities"
+                                                                                        style=" font-weight:lighter;height: 100px"></textarea>
+                                                                                    <label for="amenities">
+                                                                                        {{house.amenities}}</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-12 mb-3">
+                                                                                <button style="font-size:large"
+                                                                                    name="button1" type="submit"
+                                                                                    class="site-btn w-50 ">Update Property</button>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </section>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- <div class="tab-pane fade" id="tab-2" role="tabpanel">
+                                            <div class="pd-table-desc">
+                                                <section class="blog-details-section">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-10 offset-lg-1">
+                                                                <div class="leave-comment">
+                                                                    <h4 style="color:skyblue">Lands & Plots</h4>
+                                                                    <form method='post' enctype="multipart/form-data">
+                                                                        {% csrf_token %}
+                                                                        <div class="row">
+
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='lproperty_type'>
+                                                                                        <option selected disabled>Select
+                                                                                            Property Type</option>
+                                                                                        <option>Lands</option>
+                                                                                        <option>Plots</option>
+
+
+
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text"
+                                                                                    placeholder="Property Location"
+                                                                                    name='lproperty_location'>
+                                                                            </div>
+
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="Price"
+                                                                                    name='lprice'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="Length"
+                                                                                    name='llength'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="breadth"
+                                                                                    name='lbreadth'>
+                                                                            </div>
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='hfacing'>
+                                                                                        <option selected disabled>Facing
+                                                                                        </option>
+                                                                                        <option>East</option>
+                                                                                        <option>North</option>
+                                                                                        <option>North-East</option>
+                                                                                        <option>North-West</option>
+                                                                                        <option>South</option>
+                                                                                        <option>South-East</option>
+                                                                                        <option>East-West</option>
+                                                                                        <option>West</option>
+
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+                                                                                    Property
+                                                                                    Image</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='land_image'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image1</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='land_image1'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+                                                                                    Image2</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='land_image2' required>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image3</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='land_image3'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image4</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='land_image4'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image5</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='land_image5'>
+                                                                            </div>
+
+                                                                            <div>
+
+                                                                            </div>
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        placeholder="Description"
+                                                                                        name='ldescription'
+                                                                                        id="description"
+                                                                                        style="height: 100px;font-weight:lighter;"></textarea>
+                                                                                    <label for="description">
+                                                                                        Description</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        placeholder="Amenities"
+                                                                                        name='lamenities' id="amenities"
+                                                                                        style=" font-weight:lighter;height: 100px"></textarea>
+                                                                                    <label for="lamenities">
+                                                                                        Amenities</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-12 mb-3">
+                                                                                <button style="font-size:large"
+                                                                                    name="button2" type="submit"
+                                                                                    class="site-btn w-50 ">Add
+                                                                                    Property</button>
+                                                                            </div>
+
+                                                                            <div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab-3" role="tabpanel">
+                                            <div class="pd-table-desc">
+                                                <section class="blog-details-section">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-10 offset-lg-1">
+                                                                <div class="leave-comment">
+                                                                    <h4 style="color:skyblue">Shops & Offices</h4>
+                                                                    <form method='post' enctype="multipart/form-data">
+                                                                        {% csrf_token %}
+                                                                        <div class="row">
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='sproperty_type'>
+                                                                                        <option selected disabled>
+                                                                                            Property Type</option>
+                                                                                    
+                                                                                        <option>Shop</option>
+                                                                                        <option>Office</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="Price"
+                                                                                    name='sprice'>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text"
+                                                                                    placeholder="Property Location"
+                                                                                    name='sproperty_location'>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text"
+                                                                                    placeholder="Furnishing"
+                                                                                    name='sfurnishing'>
+                                                                            </div>
+
+
+
+
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='sbathrooms'>
+                                                                                        <option selected disabled>
+                                                                                            Bathrooms</option>
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>4+</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='scar_parking'>
+                                                                                        <option selected disabled>Car
+                                                                                            Parking</option>
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>4+</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Super Builtup Area"
+                                                                                    name='ssuper_buldup_area'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Carpet Area"
+                                                                                    name='scarpet_area'>
+                                                                            </div>
+
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Maintenance(Monthly)"
+                                                                                    name='smaintenance'>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text" placeholder="Facing"
+                                                                                    name='sfacing'>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text"
+                                                                                    placeholder="Reference"
+                                                                                    name='sreference'>
+                                                                            </div>
+
+                                                                                <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="Project Name"
+                                                                                    name='project_name'>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+                                                                                    Property
+                                                                                    Image</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='shop_image'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+                                                                                    image1
+                                                                                </label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='simage1'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image2</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='simage2'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image3</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='simage3'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image4</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='simage4'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image5</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='simage5'>
+                                                                            </div>
+
+                                                                            <div>
+
+                                                                            </div>
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        placeholder="Description"
+                                                                                        name='sdescription'
+                                                                                        id="description"
+                                                                                        style="height: 100px;font-weight:lighter;"></textarea>
+                                                                                    <label for="des">
+                                                                                        Description</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        name='samenities'
+                                                                                        placeholder="Amenities"
+                                                                                        id="amenities"
+                                                                                        style=" font-weight:lighter;height: 100px"></textarea>
+                                                                                    <label for="amenities">
+                                                                                        Amenities</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-12 mb-3">
+                                                                                <button style="font-size:large"
+                                                                                    name='button3' type="submit"
+                                                                                    class="site-btn w-50 ">Add
+                                                                                    Property</button>
+                                                                            </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </section>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane fade" id="tab-4" role="tabpanel">
+                                            <div class="pd-table-desc">
+                                                <section class="blog-details-section">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-10 offset-lg-1">
+                                                                <div class="leave-comment">
+                                                                    <h4 style="color:skyblue">Pg & Hostels</h4>
+                                                                    <form method='post' enctype="multipart/form-data">
+                                                                        {% csrf_token %}
+                                                                        <div class="row">
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='psub_type'>
+                                                                                        <option selected disabled>Select
+                                                                                            SubType</option>
+                                                                                        <option>Guest Houses</option>
+                                                                                        <option>PG</option>
+                                                                                        <option>Roommate</option>
+
+
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="text"
+                                                                                    placeholder="Property Location"
+                                                                                    name='pproperty_location'>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel" placeholder="Price"
+                                                                                    name='pprice'>
+                                                                            </div>
+
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='pfurnishing'>
+                                                                                        <option selected disabled>
+                                                                                            Furnishing</option>
+                                                                                        <option>Furnished</option>
+                                                                                        <option>Semi-Furnished</option>
+                                                                                        <option>Unfurnished</option>
+
+
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-md-6 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <select class="form-select"
+                                                                                        name='pmeals'>
+                                                                                        <option selected disabled>Meals
+                                                                                            Included</option>
+                                                                                        <option>Yes</option>
+                                                                                        <option>No</option>
+
+                                                                                    </select>
+
+                                                                                </div>
+                                                                            </div>
+
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <input type="tel"
+                                                                                    placeholder="Car Parking"
+                                                                                    name='pcar_parking'>
+                                                                            </div>
+
+
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+                                                                                    Property
+                                                                                    Image</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='pg_image'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image1</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='pimage1'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image2</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='pimage2'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image3</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='pimage3'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image4</label>
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='pimage4'>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label for="formFileLg"
+                                                                                    class="form-label text-white ">Upload
+
+                                                                                    Image5</label>
+
+
+
+                                                                                <input
+                                                                                    class="form-control form-control-lg "
+                                                                                    id="formFileLg" type="file"
+                                                                                    name='pimage5'>
+                                                                            </div>
+
+                                                                            <div>
+
+                                                                            </div>
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        placeholder="Description"
+                                                                                        name='pdescription'
+                                                                                        id="description"
+                                                                                        style="height: 100px;font-weight:lighter;"></textarea>
+                                                                                    <label for="des">
+                                                                                        Description</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 mb-3">
+                                                                                <div class="form-floating">
+                                                                                    <textarea class="form-control"
+                                                                                        placeholder="Amenities"
+                                                                                        name='pamenities' id="amenities"
+                                                                                        style=" font-weight:lighter;height: 100px"></textarea>
+                                                                                    <label for="pamenities">
+                                                                                        Amenities</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-12 mb-3">
+                                                                                <button style="font-size:large"
+                                                                                    type="submit" name='button4'
+                                                                                    class="site-btn w-50 "><a href="#"class="text-white">Edit</a>
+                                                                                    Property</button>
+                                                                            </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            </form>
+        </section>
+        <!-- Property Details Section End -->
+    </center>
+
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="{% static 'user/img/footer-bg.jpg' %}">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <a href="#"><img src=""><h3 style="color:skyblue">HomeLife</h3></a>
+                            </div>
+                            <p>Count on us and find your dream properties today</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="footer-widget">
+                            <h4>Property City</h4>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Hyderabad</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Chennai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Vizag</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Bangalore</a></li>
+                            </ul>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Tirpati</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Kerala</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Maharastra</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Nellore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Social</h4>
+                            <ul class="social">
+                                <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-option">
+                                <li><i class="fa fa-map-marker"></i>Hyderabad,Pin Code:500074. T.S.</li>
+
+                                <li><i class="fa fa-phone"></i> 8555887986</li>
+                                <li><i class="fa fa-envelope"></i> info@codebook.in</li>
+                                <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p>
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Designed & Developed by FZ INFOTECH
+                    <i class="ti-heart" aria-hidden="true"></i> <a href="https://colorlib.com"
+                        target="_blank"></a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'user/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Azenta Template">
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>HomeLife</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}" type="text/css">
+</head>
+
+
+<b>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+  
+  
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="main-menu">
+
+                            <ul>
+
+                                <li> <a href="#" class="partner-logo">
+                                    <div class="partner-logo-tablecell">
+                                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                                    </div>
+                                </a>
+                                <li class="active"><a href="{% url 'user_dashboard' %}">Dashboard</a></li>
+                                <li><a href="{% url 'property_types' %}">Properties</a></li>
+                                <li><a href="{% url 'add_properties_rent' %}">Add Properties</a></li>
+                                <li><a href="{% url 'profile' %}">Profile</a></li>
+                                <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="col-lg-3">
+                        <div class="top-right mt-2">
+                            <div class="language-option">
+                               
+                                <span>MY ACCOUNTS</span>
+                                <i class="fa fa-angle-down"></i>
+                                <div class="flag-dropdown">
+                                    <ul>
+                                        
+                                        <li><a href="{% url 'my_properties' %}">My Properties</a></li>
+                                        {% comment %} <li><a href="{% url 'property_types' %}">My Bookings</a></li> {% endcomment %}
+                                        <li><a href="{% url 'appointment' %}">Appointments</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="{% url 'home' %}" class="property-sub">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Breadcrumb Section Begin -->
+        <section class="breadcrumb-section contact-page " style="background-color:black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-text">
+                            <h2>Edit Profile</h2>
+                            <div class="breadcrumb-option">
+                                <a href="#"><i class="fa fa-home"></i>User</a>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Breadcrumb Section Begin -->
+
+
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+
+
+
+     <!-- logint Start -->
+  <div class="container-fluid py-5">
+   
+    <div class="row g-6 align-items-center justify-content-center">
+       
+        <div class="col-lg-6 md-3 sm-2">
+           
+                <div class="col-lg-7 offset-lg-1">
+                    <div class="contact-text">
+                        <div class="section-title margin-dashed">
+                           
+                            <h5>Profile</h5>
+                        </div>
+                        <form class="contact-form" method ="post" enctype="multipart/form-data"> 
+               
+                            {% csrf_token %}
+
+
+             {%comment %}  SWEET ALERT{% endcomment %}
+                 {% if messages %}              
+                    {% for message in messages %}
+                      {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                          <script>swal({
+                            title: "",
+                            text: "{{message}}",
+                            icon: "warning",
+                            button: "OK",
+                          });
+                        </script>
+                        
+                      {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                          <script>swal({
+                            title: "Success :)",
+                            text: "{{message}}",
+                            icon: "success",
+                            button: "OK",
+                          });
+                        </script>
+                      {% endif %}              
+                    {% endfor %} 
+                  {% endif %}
+
+
+                            <input type="text" placeholder="Name" name='user_name' value={{data.user_name}}>
+                            <input type="text" placeholder="Email"name='email' value={{data.email}}>
+                            <input type="tel" placeholder="Mobile Number"name='mobile' value={{data.mobile}}>
+                            <input type="date" placeholder="Date of Birth"name='dob' value={{data.dob}}>
+
+                            #|date:'d-m-Y'}}
+                            
+                            <input type="text" placeholder="Location"name='location' value={{data.location}}>
+                            
+                                <label for="formFileLg" class="form-label text-white ">Upload Image</label>
+                                <input class="form-control form-control-lg " id="formFileLg" type="file" name='user_image' value={{data.user_image}}>
+                              
+
+                            
+                            <div>
+                                
+                                <button class="btn py-3 site-btn"
+                                    type="submit" >Update</button>
+                            </div>
+                        
+                        </form>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- login End -->
+
+ 
+ <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="{% static 'user/img/footer-bg.jpg' %}">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <a href="#"><img src=""><h3 style="color:skyblue">HomeLife</h3></a>
+                            </div>
+                            <p>Count on us and find your dream properties today</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="footer-widget">
+                            <h4>Property City</h4>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Hyderabad</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Chennai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Vizag</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Bangalore</a></li>
+                            </ul>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Tirpati</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Kerala</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Maharastra</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Nellore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Social</h4>
+                            <ul class="social">
+                                <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-option">
+                                <li><i class="fa fa-map-marker"></i>Hyderabad,Pin Code:500074. T.S.</li>
+
+                                <li><i class="fa fa-phone"></i> 8555887986</li>
+                                <li><i class="fa fa-envelope"></i> info@codebook.in</li>
+                                <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p>
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Designed & Developed by FZ INFOTECH
+                    <i class="ti-heart" aria-hidden="true"></i> <a href="https://colorlib.com"
+                        target="_blank"></a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'user/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Azenta Template">
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>HomeLife</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}" type="text/css">
+</head>
+
+
+<b>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="main-menu">
+                           
+                            <ul>
+
+                                <li><a href="#" class="partner-logo">
+                                    <div class="partner-logo-tablecell">
+                                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                                    </div>
+                                </a></li>
+                                <li ><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li class="active"><a href="{% url 'properties_menu' %}">Properties</a></li>
+                                <li><a href="{% url 'admin_login' %}">Admin</a></li>
+                                <li><a href="{% url 'user_login' %}">User</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="top-right mt-2">
+                           <a href="{% url 'user_login' %}" class="property-sub">SALE PROPERTY</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-logo">
+            
+                   
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section contact-page " style="background-color:black" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Properties</h2>
+                        <div class="breadcrumb-option">
+                            <a href="#"><i class="fa fa-home"></i> Home</a>
+                            <span>Properties</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section Begin -->
+
+                
+        </div>
+    </header>
+    <!-- Header End -->
+
+  
+
+    <!-- Property Section Begin -->
+    <section class="property-section spad">
+        <div class="container">
+            <div class="row justify-content-center">
+               
+                <div class="col-lg-9">
+                    <h3 class="property-title">Properties</h3>
+                    <div class="property-list">
+                        {% for h in house %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                       <a href="{% url 'user_login' %}"> <img src="/media/{{h.house_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For Rent</div>
+                                        <h5 class="r-title">{{h.property_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <ul class="room-features">
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.super_buldup_area}} sqft</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bed"></i>
+                                                <p>{{h.bedrooms}}</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bath"></i>
+                                                <p>{{h.bathrooms}}</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-car"></i>
+                                                <p>{{h.car_parking}}</p>
+                                            </li>
+                                        </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                        {% for h in salehouse %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                        <a href="{% url 'user_login' %}">  <img src="/media/{{h.house_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For sale</div>
+                                        <h5 class="r-title">{{h.property_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <ul class="room-features">
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.super_buldup_area}} sqft</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bed"></i>
+                                                <p>{{h.bedrooms}}</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bath"></i>
+                                                <p>{{h.bathrooms}}</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-car"></i>
+                                                <p>{{h.car_parking}}</p>
+                                            </li>
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% for h in land %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                        <a href="{% url 'user_login' %}"> <img src="/media/{{h.land_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For Rent</div>
+                                        <h5 class="r-title">{{h.property_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <a class="room-features">
+            
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.breadth}} sqft</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.length}} length</p>
+                                            </li>
+                                        </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% for h in saleland %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                        <a href="{% url 'user_login' %}"> <img src="/media/{{h.land_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For Sale</div>
+                                        <h5 class="r-title">{{h.property_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <ul class="room-features">
+            
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.breadth}} sqft</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.length}} length</p>
+                                            </li>
+                                        </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% for h in shop %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                        <a href="{% url 'user_login' %}">  <img src="/media/{{h.shop_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For Rent</div>
+                                        <h5 class="r-title">{{h.property_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <ul class="room-features">
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.super_buldup_area}} sqft</p>
+                                            </li>
+                                          
+                                            <li>
+                                                <i class="fa fa-bath"></i>
+                                                <p>{{h.bathrooms}}</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-car"></i>
+                                                <p>{{h.car_parking}}</p>
+                                            </li>
+                                        </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                        {% for h in saleshop %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                        <a href="{% url 'user_login' %}"> <img src="/media/{{h.shop_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For sale</div>
+                                        <h5 class="r-title">{{h.property_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <a class="room-features">
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.super_buldup_area}} sqft</p>
+                                            </li>
+                                           
+                                            <li>
+                                                <i class="fa fa-bath"></i>
+                                                <p>{{h.bathrooms}}</p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-car"></i>
+                                                <p>{{h.car_parking}}</p>
+                                            </li>
+                                        </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% for h in pg %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                        <a href="{% url 'user_login' %}"> <img src="/media/{{h.pg_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For Rent</div>
+                                        <h5 class="r-title">{{h.sub_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <ul class="room-features">
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.super_buldup_area}} sqft</p>
+                                            </li>
+                                           
+                                    
+                                            <li>
+                                                <i class="fa fa-car"></i>
+                                                <p>{{h.car_parking}}</p>
+                                            </li>
+                                        </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                        {% for h in salepg %}
+                        <div class="single-property-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property-pic">
+                                        <a href="{% url 'user_login' %}"> <img src="/media/{{h.pg_image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 justy">
+                                    <div class="property-text ">
+                                        <div class="s-text">For sale</div>
+                                        <h5 class="r-title">{{h.sub_type}}</h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5>{{h.price}}</h5>
+                                        </div>
+                                        <div class="properties-location"><i class="icon_pin"></i> {{h.property_location}}</div>
+                                        <p>{{h.description}}</p>
+                                        <ul class="room-features">
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p>{{h.super_buldup_area}} sqft</p>
+                                            </li>
+                                          </a>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property Section End -->
+
+    <!-- Partner Carousel Section Begin -->
+    <div class="partner-section">
+        <div class="container">
+            <div class="partner-carousel owl-carousel">
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-1.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-3.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-4.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-5.png' %}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Carousel Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="{% static 'user/img/footer-bg.jpg' %}">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <a href="#"><img src=""><h3 style="color:skyblue">HomeLife</h3></a>
+                            </div>
+                            <p>Count on us and find your dream properties today</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="footer-widget">
+                            <h4>Property City</h4>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Hyderabad</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Chennai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Vizag</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Bangalore</a></li>
+                            </ul>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Tirpati</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Kerala</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Maharastra</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Nellore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Social</h4>
+                            <ul class="social">
+                                <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-option">
+                                <li><i class="fa fa-map-marker"></i>Hyderabad,Pin Code:500074. T.S.</li>
+
+                                <li><i class="fa fa-phone"></i> 8555887986</li>
+                                <li><i class="fa fa-envelope"></i> info@codebook.in</li>
+                                <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p>
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Designed & Developed by FZ INFOTECH
+                    <i class="ti-heart" aria-hidden="true"></i> <a href="https://colorlib.com"
+                        target="_blank"></a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'user/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+</body>
+
+</html>

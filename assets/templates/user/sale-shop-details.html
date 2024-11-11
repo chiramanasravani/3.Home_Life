@@ -1,0 +1,448 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Azenta Template">
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>HomeLife</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}" type="text/css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+</head>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="main-menu">
+
+                            <ul>
+
+                                <li> <a href="#" class="partner-logo">
+                                    <div class="partner-logo-tablecell">
+                                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                                    </div>
+                                </a>
+                                <li><a href="{% url 'user_dashboard' %}">Dashboard</a></li>
+                                <li  class="active"><a href="{% url 'property_types' %}">Properties</a></li>
+                                <li><a href="{% url 'add_properties_rent' %}">Add Properties</a></li>
+                                <li><a href="{% url 'profile' %}">Profile</a></li>
+                                <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="col-lg-3">
+                        <div class="top-right mt-2">
+                            <div class="language-option">
+                               
+                                <span>MY ACCOUNTS</span>
+                                <i class="fa fa-angle-down"></i>
+                                <div class="flag-dropdown">
+                                    <ul>
+                                        
+                                        <li><a href="{% url 'my_properties' %}">My Properties</a></li>
+                                        {% comment %} <li><a href="{% url 'property_types' %}">My Bookings</a></li> {% endcomment %}
+                                        <li><a href="{% url 'appointment' %}">Appointments</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="{% url 'home' %}" class="property-sub">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Breadcrumb Section Begin -->
+        <section class="breadcrumb-section contact-page " style="background-color:black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-text">
+                            <h2>Property Details</h2>
+                            <div class="breadcrumb-option">
+                                <a href="#"><i class="fa fa-home"></i> User</a>
+                                <span>Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     </div>
+    </header>
+    <!-- Header End -->
+  
+
+
+    <!-- Property Details Section Begin -->
+    <section class="property-details-section spad">
+        <div class="container">
+           
+            <div class="row justify-content-center">
+
+                <div class="col-lg-9">
+                    
+                    <div class="pd-details-text">
+                        <div class="pd-details-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-send"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-print"></i></a>
+                            <a href="#"><i class="fa fa-cloud-download"></i></a>
+                        </div>
+                       
+                        <div class="property-more-pic">
+                            <div class="product-pic-zoom">
+                                <img class="product-big-img "style="width:200px;height:500px;" src="/media/{{property.shop_image}}" alt="">
+                            </div>
+                            <div class="product-thumbs">
+                                <div class="product-thumbs-track ps-slider owl-carousel">
+                                    <div class="pt" data-imgbigurl="/media/{{property.image1}}">
+                                        
+                                        <img style="height:110px;"
+                                            src="/media/{{property.image1}}" alt=""></div>
+                                    <div class="pt active" data-imgbigurl="/media/{{property.image2}}">
+                                        
+                                        <img style="height:110px;"
+                                            src="/media/{{property.image2}}" alt=""></div>
+                                    <div class="pt" data-imgbigurl="/media/{{property.image3}}">
+                                        
+                                        <img style="height:110px;"
+                                     src="/media/{{property.image3}}" alt=""></div>
+                                    <div class="pt" data-imgbigurl="/media/{{property.image4}}">
+                                        
+                                        <img style="height:110px;"
+                                            src="/media/{{property.image4}}" alt=""></div>
+                                    <div class="pt" data-imgbigurl="/media/{{property.image5}}">
+                                        
+                                        <img style="height:110px;"
+                                            src="/media/{{property.image5}}" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="pd-details-tab">
+                            <div class="tab-item">
+                                <ul class="nav" role="tablist">
+                                    <li>
+                                        <a class="active" data-toggle="tab" href="#tab-1" role="tab">Overview</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tab-2" role="tab">Description</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tab-3" role="tab">Amenities</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-item-content">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade-in active" id="tab-1" role="tabpanel" >
+                                        <div class="property-more-table mb-3">
+                                            <table class="left-table">
+                                                <tbody>
+                                                   
+                                            
+                                                    <tr>
+                                                        <td class="pt-name">Property Location</td>
+                                                        <td class="p-value">{{property.property_location}}</td>
+                                                    </tr>
+    
+                                                    <tr>
+                                                        <td class="pt-name">Bathrooms</td>
+                                                        <td class="p-value">{{property.bathrooms}}</td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td class="pt-name">Car Parking</td>
+                                                        <td class="p-value">{{property.parking_area}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Super Buldup area</td>
+                                                        <td class="p-value">{{property.super_buldup_area}} spft</td>
+                                                    </tr>
+    
+                                                    <tr>
+                                                        <td class="pt-name">Carpet area</td>
+                                                        <td class="p-value">{{property.carpet_area}} spft</td>
+                                                    </tr>
+    
+                                                    
+                                                </tbody>
+                                            </table>
+                                            <table class="right-table">
+                                                <tbody>
+                                                    
+                                                    <tr>
+                                                        <td class="pt-name">Furnishing</td>
+                                                        <td class="p-value">{{property.furnishing}} spft</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Maintenance</td>
+                                                        <td class="p-value">{{property.maintenance}}</td>
+                                                    </tr>
+                                                   
+                                                    <tr>
+                                                        <td class="pt-name">Facing</td>
+                                                        <td class="p-value">{{property.facing}} </td>
+                                                    </tr>
+    
+                                         <tr>
+                                            <td class="pt-name">Reference</td>
+                                            <td class="p-value">#{{property.reference}}</td>
+                                        </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-22" role="tabpanel">
+                                        <div class="pd-table-desc">
+                                            <textarea style="border-color:white" rows="4" cols="80">{{property.description}}</textarea>
+                                        </div>
+                                    </div>
+    
+                                    <div class="tab-pane fade" id="tab-23" role="tabpanel">
+                                        <div class="pd-table-amenities">
+                                            <textarea style="border-color:white" rows="4" cols="80">{{property.amenities}}</textarea>
+                                        </div>
+                                    </div>                          </div>
+                                    </div>
+                                </div>
+                               
+
+
+                                <div class="property-contactus">
+                                    <h4>Contact Us</h4>
+                                    <div class="row">
+
+
+                                        <div class="col-lg-5">
+                                            <div class="agent-desc">
+                                                <img src="/media/{{data.user_image}}" alt="">
+                                                <div class="agent-title">
+                                                    <h5>{{data.user_name}}</h5>
+                                                    <span>Saler Marketing</span>
+                                                </div>
+                                                <div class="agent-social">
+                                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                                    <a href="#"><i class="fa fa-envelope"></i></a>
+                                                </div>
+                                                <p>In today’s net-savvy world it has become common for any business to have a
+                                                    website which they use mostly for advertising their products and services.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 offset-lg-1">
+                                            <form action="{% url 'sale_shop_details' property.sale_shop_id %}" class="agent-contact-form" method ="post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+
+                                                <div class="row g-3">
+                           
+                                               
+                                                   {% if messages %}              
+                                                   {% for message in messages %}
+                                                     {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                                                         <script>swal({
+                                                           title: "",
+                                                           text: "{{message}}",
+                                                           icon: "warning",
+                                                           button: "OK",
+                                                         });
+                                                       </script>
+                                                       
+                                                     {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                                                         <script>swal({
+                                                           title: "Success :)",
+                                                           text: "{{message}}",
+                                                           icon: "success",
+                                                           button: "OK",
+                                                         });
+                                                       </script>
+                                                     {% endif %}              
+                                                   {% endfor %} 
+                                                 {% endif %}
+                           
+                           
+
+                                                <input type="text" placeholder="User Name" value={{user.user_name}}* name='user_name' readonly>
+                                                <input type="text" placeholder="Email" value={{user.email}} name='email'  readonly>
+                                                <input type="tel" placeholder="Mobile" value={{user.mobile}} name='mobile' readonly>
+                                                <textarea placeholder="Messages" name='message' required></textarea>
+                                                <h5 hidden>{{data.mobile}}</h5>
+                                                <button type="submit" class="site-btn">Book Now</button>
+                                            </form>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                      
+                    </div>
+                    
+                </div>
+               
+            </div>
+           
+        </div>
+    </section>
+    <!-- Property Details Section End -->
+
+    <!-- Partner Carousel Section Begin -->
+    <div class="partner-section">
+        <div class="container">
+            <div class="partner-carousel owl-carousel">
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-1.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-2.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-3.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-4.png' %}" alt="">
+                    </div>
+                </a>
+                
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'user/img/partner/partner-5.png' %}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Carousel Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="{% static 'user/img/footer-bg.jpg' %}">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <a href="#"><img src=""><h3 style="color:skyblue">HomeLife</h3></a>
+                            </div>
+                            <p>Count on us and find your dream properties today</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="footer-widget">
+                            <h4>Property City</h4>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Hyderabad</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Chennai</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Vizag</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Bangalore</a></li>
+                            </ul>
+                            <ul>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Tirpati</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Kerala</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Maharastra</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="#">Nellore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Social</h4>
+                            <ul class="social">
+                                <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-option">
+                                <li><i class="fa fa-map-marker"></i>Hyderabad,Pin Code:500074. T.S.</li>
+
+                                <li><i class="fa fa-phone"></i> 8555887986</li>
+                                <li><i class="fa fa-envelope"></i> info@codebook.in</li>
+                                <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p>
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Designed & Developed by FZ INFOTECH
+                    <i class="ti-heart" aria-hidden="true"></i> <a href="https://colorlib.com"
+                        target="_blank"></a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'user/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+</body>
+
+</html>
